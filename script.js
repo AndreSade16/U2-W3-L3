@@ -146,6 +146,9 @@ const displayCards = () => {
           </div>
         `;
       });
+    })
+    .catch((err) => {
+      alert("Cannot fetch data from server.");
     });
 };
 
