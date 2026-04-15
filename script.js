@@ -135,7 +135,7 @@ const displayCards = () => {
                 <div class="card-body bg-body-tertiary d-flex flex-column">
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text flex-grow-1 text-capitalize">${category}</p>
-                    <p class="card-text fw-bold">${price}$</p>
+                    <p class="card-text fw-bold">${price.toFixed(2)}$</p>
                     <div class="row justify-content-between mx-1 g-2 g-md-0">
                         <button class="btn btn-primary delete-card col-12 col-md-5" onclick="deleteCard(event)">Delete</button>
                         <button class="btn btn-primary buy-card col-12 col-md-5" onclick="addToCart('${asin}')">Add to Cart</button>
