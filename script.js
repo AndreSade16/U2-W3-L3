@@ -4,7 +4,7 @@ const buyBtn = document.getElementById("buy-btn");
 const totalDisplay = document.getElementById("total-display");
 const cartItemsBadge = document.getElementById("cart-items-badge");
 let books = [];
-let cart = JSON.parse(sessionStorage.getItem("cart")) || {};
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
 let numOfCartItems = Object.values(cart).length;
 let total = Object.values(cart).reduce(
   (sum, item) => sum + item.price * item.qty,
@@ -12,7 +12,7 @@ let total = Object.values(cart).reduce(
 );
 
 const saveCart = () => {
-  sessionStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const updateBadge = () => {
