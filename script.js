@@ -34,13 +34,13 @@ const displayNewCart = (cart) => {
     cartList.innerHTML += `
     <li id="cart-${asin}" class="mb-3">
         <div class="row justify-content-between">
-            <p class="col-12 col-md-5 fw-bold">${title}</p>
-            <div class="d-flex flex-column">
+            <p class="col-12 fw-bold">${title}</p>
+            <div class="d-flex flex-column flex-md-row">
             <p class="col-12 col-md-5">Quantity: ${qty}</p>
             <p class="col-12 col-md-5">${price}$</p>
-            <p class="col-12 col-md-5">Total= ${finalPrice}$</p>
             </div>
-        </div>
+            </div>
+            <p class="col-12 col-md-5">Total= ${finalPrice}$</p>
         <button class="btn btn-secondary" onclick="removeFromCart('${asin}')">Remove</button>
     </li>
   `;
