@@ -32,7 +32,7 @@ const displayNewCart = (cart) => {
     const { asin, title, price, qty } = cartItem;
     const finalPrice = (qty * price).toFixed(2);
     cartList.innerHTML += `
-    <li id="cart-${asin}" class="mb-3">
+    <li id="cart-${asin}" class="mb-3 border border-1 border-secondary rounded-2 p-2 list-unstyled">
         <div class="row justify-content-between">
             <p class="col-12 fw-bold">${title}</p>
             <div class="d-flex flex-column flex-md-row">
@@ -131,11 +131,11 @@ const displayCards = () => {
         cardsSpace.innerHTML += `
           <div class="col-12 col-md-6 col-lg-3 d-flex mb-3">
             <div class="card w-100">
-                <img src="${img}" class="card-img-top h-50" alt="${title}-img">
+                <img src="${img}" class="card-img-top" style="aspect-ratio: 1/1.6; object-fit: cover; object-position: -5px 0px" alt="${title}-img">
                 <div class="card-body bg-body-tertiary d-flex flex-column">
                     <h5 class="card-title">${title}</h5>
-                    <p class="card-text flex-grow-1 text-capitalize">${category}</p>
-                    <p class="card-text fw-bold">${price.toFixed(2)}$</p>
+                    <p class="card-text text-capitalize">${category}</p>
+                    <p class="card-text fw-bold mt-auto">${price.toFixed(2)}$</p>
                     <div class="row justify-content-between mx-1 g-2 g-md-0">
                         <button class="btn btn-primary delete-card col-12 col-md-5" onclick="deleteCard(event)">Delete</button>
                         <button class="btn btn-primary buy-card col-12 col-md-5" onclick="addToCart('${asin}')">Add to Cart</button>
